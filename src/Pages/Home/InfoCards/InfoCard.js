@@ -1,14 +1,15 @@
 import React from "react";
 
-const InfoCard = () => {
+const InfoCard = ({ card }) => {
+    const { name, description,icon,bgClass } = card;
   return (
-    <div className="card card-side bg-base-100 shadow-xl">
+    <div className={`card card-side bg-base-100 shadow-xl ${bgClass}`}>
       <figure>
-        <img src="https://placeimg.com/200/280/arch" alt="Movie" />
+        <img src={icon} alt="Movie" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">New movie is released!</h2>
-        <p>Click the button to watch on Jetflix app.</p>
+              <h2 className="card-title">{ name}</h2>
+              <p>{ description}</p>
         <div className="card-actions justify-end">
           <button className="btn btn-primary">Watch</button>
         </div>
