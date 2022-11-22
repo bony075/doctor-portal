@@ -1,21 +1,15 @@
-import React, { useState } from 'react';
+import React from 'react';
+import chair from '../../../assets/images/chair.png';
 import { DayPicker } from 'react-day-picker';
-import chair from "../../../assets/images/chair.png";
-
-const AppointmentBanner = () => {
-    const [ selectedDate, setSelectedDate ]=useState(new Date())
+const AppointmentBanner = ({ selectedDate, setSelectedDate }) => {
   return (
-    <header className="my-6">
+    <header className='my-6'>
       <div className="hero">
         <div className="hero-content flex-col lg:flex-row-reverse">
-          <img
-            src={chair}
-            alt="dentist chair"
-            className="max-w-sm rounded-lg shadow-2xl"
-          />
-          <div className="mr-6 sm:w-full">
+          <img src={chair} alt="dentist chair" className="max-w-sm rounded-lg shadow-2xl" />
+          <div className='mr-6 sm:w-full'>
             <DayPicker
-              mode="single"
+              mode='single'
               selected={selectedDate}
               onSelect={setSelectedDate}
             />
